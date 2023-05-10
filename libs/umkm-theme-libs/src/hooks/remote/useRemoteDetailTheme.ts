@@ -7,6 +7,7 @@ import themeDataMapper from '../../utils/mapper/themeDataMapper';
 
 const useRemoteDetailTheme = () => {
   const { id } = useParams()
+  console.log('params id ', id)
   const uri = `/admin/theme/${id}`;
   const { data, ...others } = useSwr<GetDetailThemeResponse>(uri);
   
