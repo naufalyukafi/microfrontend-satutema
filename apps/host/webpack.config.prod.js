@@ -26,7 +26,7 @@ const prodConfig = {
    * ]
    */
   remotes: [
-    ['umkm-theme', 'http://localhost:4202/'],
+    ['umkm-theme', 'https://theme-satutema.vercel.app/'],
   ],
 };
 
