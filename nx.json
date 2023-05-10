@@ -1,84 +1,45 @@
 {
-  "version": 2,
-  "projects": {
-    "host": {
-      "root": "apps/host",
-      "sourceRoot": "apps/host/src",
-      "projectType": "application",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/web:build",
-          "options": {
-            "outputPath": "dist/apps/host",
-            "index": "apps/host/src/index.html",
-            "main": "apps/host/src/main.ts",
-            "tsConfig": "apps/host/tsconfig.app.json",
-            "assets": ["apps/host/src/favicon.ico", "apps/host/src/assets"],
-            "styles": ["apps/host/src/styles.css"],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/host/src/environments/environment.ts",
-                  "with": "apps/host/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            }
-          }
-        }
-      }
-    },
-    "umkm-theme": {
-      "root": "apps/umkm-theme",
-      "sourceRoot": "apps/umkm-theme/src",
-      "projectType": "application",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/web:build",
-          "options": {
-            "outputPath": "dist/apps/umkm-theme",
-            "index": "apps/umkm-theme/src/index.html",
-            "main": "apps/umkm-theme/src/main.ts",
-            "tsConfig": "apps/umkm-theme/tsconfig.app.json",
-            "assets": ["apps/umkm-theme/src/favicon.ico", "apps/umkm-theme/src/assets"],
-            "styles": ["apps/umkm-theme/src/styles.css"],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/umkm-theme/src/environments/environment.ts",
-                  "with": "apps/umkm-theme/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            }
-          }
-        }
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "npmScope": "web-builder",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "OTI0Zjc0ODEtNjQ2Yi00MDQ1LWEyYmEtMzllMzI2MzBlMzRifHJlYWQtd3JpdGU="
       }
     }
   },
-  "cli": {
-    "defaultCollection": "@nrwl/workspace"
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+    },
+    "test": {
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
+    }
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "css",
+        "linter": "eslint",
+        "bundler": "webpack",
+        "babel": true
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint",
+        "unitTestRunner": "jest"
+      }
+    }
   }
 }
