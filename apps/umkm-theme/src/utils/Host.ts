@@ -1,6 +1,4 @@
-const HOST = process.env.NODE_ENV === "development" 
-? 'http://localhost:8000/api/v1'
-: ''
+const HOST = "https://express-satutema.vercel.app/api/v1"
 
 export {
   HOST
