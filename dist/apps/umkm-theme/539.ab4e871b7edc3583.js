@@ -1,0 +1,1 @@
+(self.webpackChunkumkm_theme=self.webpackChunkumkm_theme||[]).push([[539],{8539:(e,k,m)=>{m.r(k),m.d(k,{default:()=>u.Z});var u=m(1048)}}]);
