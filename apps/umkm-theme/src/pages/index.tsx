@@ -1,7 +1,6 @@
 import React from 'react';
 import Website from './website';
-import { Route, Routes } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Heading } from '@chakra-ui/react';
 
 const HomePage = () => {

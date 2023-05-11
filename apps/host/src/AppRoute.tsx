@@ -1,7 +1,6 @@
 import Home from './pages/Home';
-import { Route, Routes } from 'react-router';
 import ProtectedRoute from './utils/ProtectedRoute';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import CreateWebsite from './pages/CreateWebsite';
