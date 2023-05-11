@@ -20,6 +20,5 @@ module.exports = {
     }
 
     if (name === '@hookform/resolvers/yup') return false
-    if (name === 'react-router') return false
   },
 };
