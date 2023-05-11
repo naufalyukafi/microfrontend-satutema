@@ -12,6 +12,7 @@ const moduleFederationConfig = {
     if (name === 'swr') {
       return false;
     }
+    if (name === 'react-router') return false
   },
 };
 
