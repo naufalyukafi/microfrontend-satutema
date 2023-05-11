@@ -2,7 +2,8 @@ import * as ReactDOM from 'react-dom/client';
 import { ChakraProvider } from '@chakra-ui/react';
 import { fetcher } from './libs/axios';
 import { SWRConfig } from 'swr';
-import Pages from './pages';
+import Website from './pages/website';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <ChakraProvider>
     <SWRConfig value={{ fetcher }}>
-      <Pages />
+      <BrowserRouter>
+        <Website />
+      </BrowserRouter>
     </SWRConfig>
   </ChakraProvider>
 );
