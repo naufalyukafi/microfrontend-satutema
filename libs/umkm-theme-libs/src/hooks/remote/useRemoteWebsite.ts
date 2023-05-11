@@ -6,8 +6,10 @@ import websiteDataMapper from '../../utils/mapper/websiteDataMapper';
 import { useParams } from 'react-router-dom';
 
 const useRemoteWebsite = () => {
-  let { id } = useParams();
-  const uri = `/website/${id}`;
+  var urlParams = new URLSearchParams(window.location.search);
+
+  var websiteName = urlParams.get('website');
+  const uri = `/website/${websiteName}`;
   const { data, ...others } = useSwr<GetWebsiteResponse>(uri);
 
   const transformData = useCallback((data: GetWebsiteResponse) => {

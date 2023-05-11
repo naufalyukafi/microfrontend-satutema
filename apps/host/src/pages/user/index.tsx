@@ -25,7 +25,10 @@ const UserDashboard = () => {
           {data && (
             <Button
               onClick={() =>
-                window.open(`http://localhost:4202/${data.slug}`, '_blank')
+                window.open(
+                  `https://theme-satutema.vercel.app/?website=${data.slug}`,
+                  '_blank'
+                )
               }
               variant="outline"
               colorScheme="blue"

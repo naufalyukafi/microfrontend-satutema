@@ -1,14 +1,15 @@
 import { useCallback, useMemo } from 'react';
-import { useParams } from 'react-router-dom';
 
 import useSwr from 'swr';
-import { GetDetailThemeResponse, GetThemeResponse } from '../../ts/Theme';
+import { GetDetailThemeResponse } from '../../ts/Theme';
 import themeDataMapper from '../../utils/mapper/themeDataMapper';
 
 const useRemoteDetailTheme = () => {
-  const { id } = useParams()
-  console.log('params id ', id)
-  const uri = `/admin/theme/${id}`;
+  var urlParams = new URLSearchParams(window.location.search);
+
+  var websiteName = urlParams.get('website');
+  
+  const uri = `/theme/${websiteName}`;
   const { data, ...others } = useSwr<GetDetailThemeResponse>(uri);
   
   const transformData = useCallback((data: GetDetailThemeResponse) => {
