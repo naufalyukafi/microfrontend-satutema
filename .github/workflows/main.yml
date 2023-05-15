@@ -1,0 +1,36 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build and deploy Host
+        env:
+          NX_CLOUD_ACCESS_TOKEN: OTI0Zjc0ODEtNjQ2Yi00MDQ1LWEyYmEtMzllMzI2MzBlMzRifHJlYWQtd3JpdGU=
+          VERCEL_TOKEN: 5LzO0Xjb6x54iSeQqKjeHSln
+        run: |
+          yarn nx build host --configuration=production
+
+      - name: Build and deploy App UMKM
+        env:
+          NX_CLOUD_ACCESS_TOKEN: OTI0Zjc0ODEtNjQ2Yi00MDQ1LWEyYmEtMzllMzI2MzBlMzRifHJlYWQtd3JpdGU=
+          VERCEL_TOKEN: 5LzO0Xjb6x54iSeQqKjeHSln
+        run: |
+         yarn nx build umkm-theme --configuration=production
