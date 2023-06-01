@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Container } from '@chakra-ui/react';
 import { useRemoteWebsite, useRemoteTheme } from '@satutema/umkm-theme-libs';
-const WebsiteLoad = lazy(() => import('./websiteload'));
+import WebsiteLoad from './websiteload';
 const Navbar1 = lazy(() => import('@satutema/umkm-theme-libs/Navbar1'));
 const Navbar2 = lazy(() => import('@satutema/umkm-theme-libs/Navbar2'));
 const Navbar3 = lazy(() => import('@satutema/umkm-theme-libs/Navbar3'));
