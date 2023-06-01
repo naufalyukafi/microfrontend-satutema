@@ -1,20 +1,18 @@
+import React, { lazy, Suspense } from 'react';
 import { Container } from '@chakra-ui/react';
-import {
-  Feature1,
-  Gallery1,
-  Hero1,
-  Hero2,
-  Menu1,
-  Navbar1,
-  Navbar2,
-  Navbar3,
-  Testimoni1,
-  Footerl,
-  Footer2,
-  Footer3,
-  useRemoteWebsite,
-  useRemoteTheme,
-} from '@satutema/umkm-theme-libs';
+import { useRemoteWebsite, useRemoteTheme } from '@satutema/umkm-theme-libs';
+const Navbar1 = lazy(() => import('@satutema/umkm-theme-libs/Navbar1'));
+const Navbar2 = lazy(() => import('@satutema/umkm-theme-libs/Navbar2'));
+const Navbar3 = lazy(() => import('@satutema/umkm-theme-libs/Navbar3'));
+const Hero1 = lazy(() => import('@satutema/umkm-theme-libs/Hero1'));
+const Hero2 = lazy(() => import('@satutema/umkm-theme-libs/Hero2'));
+const Feature1 = lazy(() => import('@satutema/umkm-theme-libs/Feature1'));
+const Menu1 = lazy(() => import('@satutema/umkm-theme-libs/Menu1'));
+const Testimoni1 = lazy(() => import('@satutema/umkm-theme-libs/Testimoni1'));
+const Gallery1 = lazy(() => import('@satutema/umkm-theme-libs/Gallery1'));
+const Footerl = lazy(() => import('@satutema/umkm-theme-libs/Footerl'));
+const Footer2 = lazy(() => import('@satutema/umkm-theme-libs/Footer2'));
+const Footer3 = lazy(() => import('@satutema/umkm-theme-libs/Footer3'));
 
 const Website = () => {
   const { data } = useRemoteWebsite();
@@ -153,7 +151,7 @@ const Website = () => {
   return (
     <>
       {findTheme && findThemeData && (
-        <>
+        <Suspense fallback={<div></div>}>
           {renderNavEditor(findThemeData('nav'))}
           {renderHeroEditor(findThemeData('hero'))}
           <Container maxW="container.xl">
@@ -163,7 +161,7 @@ const Website = () => {
             {renderGalleryEditor(findThemeData('gallery'))}
           </Container>
           {renderFooterEditor(findThemeData('footer'))}
-        </>
+        </Suspense>
       )}
     </>
   );
