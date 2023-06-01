@@ -15,7 +15,20 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@satutema/umkm-theme-libs": ["libs/umkm-theme-libs/src/index.ts"]
+      "@satutema/umkm-theme-libs": ["libs/umkm-theme-libs/src/index.ts"],
+      "@satutema/umkm-theme-libs/Navbar1": ["libs/umkm-theme-libs/src/navbar/navbar1/index.tsx"],
+      "@satutema/umkm-theme-libs/Navbar2": ["libs/umkm-theme-libs/src/navbar/navbar2/index.tsx"],
+      "@satutema/umkm-theme-libs/Navbar3": ["libs/umkm-theme-libs/src/navbar/navbar3/index.tsx"],
+      "@satutema/umkm-theme-libs/Hero1": ["libs/umkm-theme-libs/src/hero/hero1/index.tsx"],
+      "@satutema/umkm-theme-libs/Hero2": ["libs/umkm-theme-libs/src/hero/hero2/index.tsx"],
+      "@satutema/umkm-theme-libs/Hero3": ["libs/umkm-theme-libs/src/hero/hero3/index.tsx"],
+      "@satutema/umkm-theme-libs/Feature1": ["libs/umkm-theme-libs/src/features/features1/features1.tsx"],
+      "@satutema/umkm-theme-libs/Menu1": ["libs/umkm-theme-libs/src/menu/menu1/index.tsx"],
+      "@satutema/umkm-theme-libs/Testimoni1": ["libs/umkm-theme-libs/src/testimoni/testimoni1/index.tsx"],
+      "@satutema/umkm-theme-libs/Gallery1": ["libs/umkm-theme-libs/src/gallery/gallery1/index.tsx"],
+      "@satutema/umkm-theme-libs/Footerl": ["libs/umkm-theme-libs/src/footer/footer1/index.tsx"],
+      "@satutema/umkm-theme-libs/Footer2": ["libs/umkm-theme-libs/src/footer/footer2/index.tsx"],
+      "@satutema/umkm-theme-libs/Footer3": ["libs/umkm-theme-libs/src/footer/footer3/index.tsx"]
     }
   },
   "exclude": ["node_modules", "tmp"]
