@@ -11,9 +11,6 @@ const moduleFederationConfig = {
     './Module': './src/remote-entry.ts',
   },
   shared: (name, config) => {
-    if (name === 'swr') {
-      return false;
-    }
   },
   optimization: {
     sideEffects: false,
