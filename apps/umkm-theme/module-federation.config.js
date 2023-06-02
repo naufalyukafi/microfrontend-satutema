@@ -10,7 +10,10 @@ const moduleFederationConfig = {
   exposes: {
     './Module': './src/remote-entry.ts',
   },
-  shared: (name, config) => {
+  shared: {
+    swr: {
+      singleton: true,
+    },
   },
   optimization: {
     sideEffects: false,
