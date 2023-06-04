@@ -7,7 +7,7 @@ describe("Sidebar Product Website", () => {
         cy.get('input[name="password"]').type("123456");
         cy.get("[data-testid=login-auth-button]").click();
 
-        cy.url().should("equal", "http://localhost:4200/user");
+        cy.url().should("equal", "https://microfrontend-satutema.vercel.app/user");
         cy.contains("Anda berhasil masuk akun").should("be.visible");
 
         // Navigate to Fitur Website

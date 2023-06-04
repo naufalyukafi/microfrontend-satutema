@@ -5,7 +5,7 @@ describe("Sidebar Dashboard", () => {
         cy.get('input[name="email"]').type("satutema@gmail.com");
         cy.get('input[name="password"]').type("adminsatutema");
         cy.get("[data-testid=login-auth-button]").click();
-        cy.url().should("equal", "http://localhost:4200/admin");
+        cy.url().should("equal", "https://microfrontend-satutema.vercel.app/admin");
         cy.contains("Anda berhasil masuk akun").should("be.visible");
         cy.contains('Total Pengguna').should('exist');
         cy.contains('Total Website').should('exist');

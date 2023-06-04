@@ -5,7 +5,7 @@ describe('Categories Page', () => {
         cy.get('input[name="email"]').type("satutema@gmail.com");
         cy.get('input[name="password"]').type("adminsatutema");
         cy.get("[data-testid=login-auth-button]").click();
-        cy.url().should("equal", "http://localhost:4200/admin");
+        cy.url().should("equal", "https://microfrontend-satutema.vercel.app/admin");
         cy.visit('/admin/categories');
     });
 

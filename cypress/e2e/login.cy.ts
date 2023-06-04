@@ -5,11 +5,11 @@ describe("Login", () => {
     });
 
     it("User login successfully", () => {
-        cy.get('input[name="email"]').type("va@gmail.com");
+        cy.get('input[name="email"]').type("preview@gmail.com");
         cy.get('input[name="password"]').type("123456");
         cy.get("[data-testid=login-auth-button]").click();
 
-        cy.url().should("equal", "http://localhost:4200/user");
+        cy.url().should("equal", "https://microfrontend-satutema.vercel.app/user");
         cy.contains("Anda berhasil masuk akun").should("be.visible");
         cy.contains("Lihat Website").should("be.visible");;
     });
@@ -20,7 +20,7 @@ describe("Login", () => {
         cy.get("[data-testid=login-auth-button]").click();
 
 
-        cy.url().should("equal", "http://localhost:4200/admin");
+        cy.url().should("equal", "https://microfrontend-satutema.vercel.app/admin");
         cy.contains("Anda berhasil masuk akun").should("be.visible");
         cy.contains("Total Pengguna").should("be.visible");;
     });

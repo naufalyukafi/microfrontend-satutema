@@ -1,8 +1,9 @@
 name: Deploy to Vercel
 
 on:
-  pull_request:
-    types: [opened, reopened, synchronize]
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -32,4 +33,4 @@ jobs:
           NX_CLOUD_ACCESS_TOKEN: OTI0Zjc0ODEtNjQ2Yi00MDQ1LWEyYmEtMzllMzI2MzBlMzRifHJlYWQtd3JpdGU=
           VERCEL_TOKEN: 5LzO0Xjb6x54iSeQqKjeHSln
         run: |
-         yarn nx build umkm-theme --configuration=production
+          yarn nx build umkm-theme --configuration=production
