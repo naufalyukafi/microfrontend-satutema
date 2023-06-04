@@ -19,7 +19,13 @@ const moduleFederationConfig = {
     sideEffects: false,
     minimize: true,
     minimizer: [
-      new TerserPlugin(), // Plugin untuk mengompresi dan meminify JavaScript
+      new TerserPlugin({
+        terserOptions: {
+          format: {
+            comments: false, // Menghapus komentar JavaScript
+          },
+        },
+      }),
       new CssMinimizerPlugin({ // Plugin untuk mengompresi dan meminify CSS
         minimizerOptions: {
           preset: [
@@ -34,7 +40,7 @@ const moduleFederationConfig = {
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
-        defaultVendors: {
+        vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
