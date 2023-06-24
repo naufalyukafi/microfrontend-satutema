@@ -17,7 +17,7 @@ import { useRef } from 'react';
 import { IoMdMenu } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import NavbarMobile from '../../components/theme/NavbarMobile';
-import generateSidebarItemsUsers from '../../utils/generatedata/sidebar/sidebarItems/users';
+import generateSidebarItemsTema from '../../utils/generatedata/sidebar/sidebarItems/tema';
 
 const Navbar1 = ({ logo }: { logo?: string }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -101,7 +101,7 @@ const Navbar1 = ({ logo }: { logo?: string }) => {
             </Box>
             <Divider my={3} />
             <Flex as="nav" flexDirection="column" align="stretch" mt="6">
-              {generateSidebarItemsUsers()?.map((item, index) => (
+              {generateSidebarItemsTema()?.map((item, index) => (
                 <NavbarMobile key={index} item={item} />
               ))}
             </Flex>

@@ -12,6 +12,7 @@ import DashboardSidebarItem from '../DashboardSidebarItem';
 import { useLocation } from 'react-router-dom';
 import { useDashboard } from '../../../context/DashboardProvider';
 import { DashboardSidebarProps } from '../../../ts/DashboardSidebar';
+import SatuTema from '../../../assets/images/satutema.png';
 
 const DashboardSidebarMobile = ({ items }: DashboardSidebarProps) => {
   const { pathname } = useLocation();
@@ -36,7 +37,7 @@ const DashboardSidebarMobile = ({ items }: DashboardSidebarProps) => {
             <img
               loading="lazy"
               alt="Satu Tema"
-              src={`${process.env.PUBLIC_URL}/images/satutema.png`}
+              src={SatuTema}
               style={{ objectFit: 'cover' }}
               width={150}
               height={100}
