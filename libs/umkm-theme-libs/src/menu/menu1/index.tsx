@@ -91,7 +91,7 @@ const Menu1 = ({ data }: IMenu) => {
             gap={2}
             mr={5}
           >
-            {data && data.length > 1
+            {data && data.length > 0
               ? data.map((el, i) => (
                   <MenuCard
                     key={i}

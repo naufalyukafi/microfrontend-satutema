@@ -5,44 +5,34 @@ import { TfiGallery } from 'react-icons/tfi';
 import { MdFoodBank } from 'react-icons/md';
 import { DashboardSidebarNavItem } from '../../../../ts/DashboardSidebar';
 
-function generateSidebarItemsUsers(): DashboardSidebarNavItem[] {
+function generateSidebarItemsTema(): DashboardSidebarNavItem[] {
   return [
     {
-      name: 'Dashboard',
-      path: '/user',
+      name: 'Beranda',
+      path: '/#beranda',
       icon: FiHome,
     },
     {
-      name: 'Pengaturan Website',
-      path: '/user/setting',
+      name: 'Tentang',
+      path: '/#tentang',
       icon: FiSettings,
     },
     {
-      name: 'Fitur',
-      path: '/user/feature',
+      name: 'Menu',
+      path: '/#gallery',
       icon: BsShop,
     },
     {
-      name: 'Produk',
-      path: '/user/product',
-      icon: MdFoodBank,
-    },
-    {
       name: 'Galeri',
-      path: '/user/gallery',
+      path: '/#gallery',
       icon: TfiGallery,
     },
     {
       name: 'Testimoni',
-      path: '/user/testimony',
+      path: '/#testimony',
       icon: BsChatLeftDots,
-    },
-    {
-      name: 'Tema',
-      path: '/user/theme',
-      icon: FaLaptopCode,
     },
   ];
 }
 
-export default generateSidebarItemsUsers;
+export default generateSidebarItemsTema;
