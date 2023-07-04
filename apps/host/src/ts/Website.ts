@@ -5,6 +5,7 @@ export type WebsiteRemoteDataType = {
     website_name: string;
     content: string;
     slug: string;
+    email?: string;
 };
   
 export type WebsiteType = {
@@ -14,6 +15,7 @@ export type WebsiteType = {
     websiteName: string;
     content: string;
     slug: string;
+    email?: string;
 }
 
 export type WebsiteRemoteData = WebsiteRemoteDataType[]
@@ -21,4 +23,8 @@ export type Website = WebsiteType[]
 
 export type GetWebsiteResponse = {
     results: WebsiteRemoteDataType
+};
+
+export type GetAllWebsiteResponse = {
+    results: WebsiteRemoteDataType[]
 };
