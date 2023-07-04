@@ -5,6 +5,7 @@ export type WebsiteRemoteDataType = {
     website_name: string;
     content: string;
     slug: string;
+    email?: string | undefined;
 };
   
 export type WebsiteType = {
@@ -14,6 +15,7 @@ export type WebsiteType = {
     websiteName: string;
     content: string;
     slug: string;
+    email?: string | undefined;
 }
 
 export type WebsiteRemoteData = WebsiteRemoteDataType[]

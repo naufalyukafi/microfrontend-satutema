@@ -16,6 +16,8 @@ import TestimonyDashboard from './pages/user/testimony';
 import GalleryDashboard from './pages/user/gallery';
 import ProductDashboard from './pages/user/product';
 import ChoseTheme from './pages/user/chosetheme';
+import Website from './pages/admin/website';
+import WebsiteEditor from './pages/admin/website/WebsiteEditor';
 // import Website from './pages/user/website';
 // import WebsitePreview from './pages/user/websitepreview';
 
@@ -27,6 +29,14 @@ const AdminRoute = [
   {
     path: 'admin/categories',
     component: <Categories />,
+  },
+  {
+    path: 'admin/website',
+    component: <Website />,
+  },
+  {
+    path: 'admin/website-editor/:id',
+    component: <WebsiteEditor />,
   },
   {
     path: 'admin/theme',
